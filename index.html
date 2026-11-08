@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="generator">
+
+        <h1>CSS Generator</h1>
+        <div class="tabs" id="tabs">
+            <button class="tab active" type="button" data-tab="radius">
+                Border Radius
+            </button>
+
+            <button class="tab" type="button" data-tab="property-2">
+                Word Spacing
+            </button>
+
+            <button class="tab" type="button" data-tab="property-3">
+                Text Align
+            </button>
+        </div>
+        <div class="tab-content active" data-content="radius">
+            <h2>Border Radius</h2>
+
+            <div class="control">
+                <label for="top-left">Top Left</label>
+                <input id="top-left" type="range" min="0" max="100" value="0">
+                <span id="top-left-value">0 px</span>
+            </div>
+
+            <div class="control">
+                <label for="top-right">Top Right</label>
+                <input id="top-right" type="range" min="0" max="100" value="0">
+                <span id="top-right-value">0 px</span>
+            </div>
+
+            <div class="control">
+                <label for="bottom-right">Bottom Right</label>
+                <input id="bottom-right" type="range" min="0" max="100" value="0">
+                <span id="bottom-right-value">0 px</span>
+            </div>
+
+            <div class="control">
+                <label for="bottom-left">Bottom Left</label>
+                <input id="bottom-left" type="range" min="0" max="100" value="0">
+                <span id="bottom-left-value">0 px</span>
+            </div>
+        </div>
+        <div class="tab-content" data-content="property-2">
+            <h2>Word Spacing</h2>
+
+            <div id="property-2-controls">
+                <div class="control">
+                    <label for="word-spacing">Word Spacing</label>
+                    <input id="word-spacing" type="range" min="0" max="30" value="0">
+                    <span id="word-spacing-value">0 px</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" data-content="property-3">
+            <h2>Text Align</h2>
+
+            <div id="property-3-controls">
+                <div class="control">
+                    <label for="text-align">Text Align</label>
+                    <select id="text-align">
+                        <option value="left">left</option>
+                        <option value="center" selected>center</option>
+                        <option value="right">right</option>
+                    </select>
+                    <span id="text-align-value">center</span>
+                </div>
+            </div>
+        </div>
+        <section class="preview-section">
+            <h2>Preview</h2>
+
+            <div id="preview" class="preview">
+                <span>Preview text with several words</span>
+
+                <button id="preview-button" type="button">
+                    Click
+                </button>
+            </div>
+
+            <p id="coordinates">
+                X: 0; Y: 0
+            </p>
+        </section>
+        <section class="result">
+            <h2>CSS Code</h2>
+
+            <textarea id="css-code" rows="6" readonly></textarea>
+
+            <button id="copy-button" type="button">
+                Скопіювати CSS
+            </button>
+
+            <p id="copy-message"></p>
+        </section>
+        <form id="preset-form">
+            <h2>Збереження пресета</h2>
+
+            <label for="preset-name">
+                Назва пресета
+            </label>
+
+            <input id="preset-name" type="text">
+
+            <span id="preset-error"></span>
+
+            <button type="submit">
+                Зберегти
+            </button>
+        </form>
+        <section class="log-section">
+            <h2>Журнал подій (console)</h2>
+            <p class="hint">
+                Тут відображаються повідомлення завдань 4, 11, 15 та інші.
+                Esc — скинути повзунки в 0.
+            </p>
+            <pre id="event-log"></pre>
+        </section>
+
+    </main>
+
+    <button id="scroll-top" type="button" aria-label="Повернутися вгору">
+        ↑
+    </button>
+
+</body>
+</html>
